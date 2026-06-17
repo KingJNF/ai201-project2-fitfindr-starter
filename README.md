@@ -91,7 +91,6 @@ Inputs: outfit (str), new_item (dict)
 Returns: str — a 2–4 sentence caption
 Purpose: Calls the LLM (high temperature) to write a casual, shareable OOTD caption mentioning the item, price, and platform.
 
----
 
 ## Planning Loop
 
@@ -109,9 +108,6 @@ The loop lives in run_agent() in agent.py and is a conditional sequence. It does
 
 The loop terminates either early (no results) or after the fit card is built.
 
----
-
-
 ## State Management
 
 A single session dict (created by _new_session()) is the source of truth for one interaction. It carries data between tools so the user never re-enters anything:
@@ -128,6 +124,9 @@ error	           |  On early exit	           |    Tells the caller the run ended
 
 The same selected_item flows from search_listings → suggest_outfit → create_fit_card automatically, and the outfit_suggestion passes straight into create_fit_card. No re-entry needed by the user.
 
+
+
+![No-results error handling](images/no-results.png)
 
 
 
@@ -152,10 +151,6 @@ Agent Response: Returns a descriptive error string ("Can't create a fit card wit
 Concrete example from testing: Searching designer ballgown size XXS under $5 returns no matches. The agent responds:
 "No listings matched 'designer ballgown' in size XXS under $5. Try raising your max price, removing the size filter, or using broader keywords."
 The outfit and fit-card panels stay empty — the agent does not fabricate a result.
-
-
-![No-results error handling](images/no-results.png)
-
 
 
 ## Spec Reflection
