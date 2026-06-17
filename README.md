@@ -91,7 +91,6 @@ Inputs: outfit (str), new_item (dict)
 Returns: str — a 2–4 sentence caption
 Purpose: Calls the LLM (high temperature) to write a casual, shareable OOTD caption mentioning the item, price, and platform.
 
----
 
 ## Planning Loop
 
@@ -109,9 +108,6 @@ The loop lives in run_agent() in agent.py and is a conditional sequence. It does
 
 The loop terminates either early (no results) or after the fit card is built.
 
----
-
-
 ## State Management
 
 A single session dict (created by _new_session()) is the source of truth for one interaction. It carries data between tools so the user never re-enters anything:
@@ -128,7 +124,8 @@ error	           |  On early exit	           |    Tells the caller the run ended
 
 The same selected_item flows from search_listings → suggest_outfit → create_fit_card automatically, and the outfit_suggestion passes straight into create_fit_card. No re-entry needed by the user.
 
-https://github.com/KingJNF/ai201-project2-fitfindr-starter/tree/24171b35cead11506143ef1cf3d2d3b05baa7778/images
+
+
 
 ## Error Handling:
 
@@ -152,7 +149,6 @@ Concrete example from testing: Searching designer ballgown size XXS under $5 ret
 "No listings matched 'designer ballgown' in size XXS under $5. Try raising your max price, removing the size filter, or using broader keywords."
 The outfit and fit-card panels stay empty — the agent does not fabricate a result.
 
-<img width="1074" height="1900" alt="FitFindr Failure Screenshot" src="https://github.com/user-attachments/assets/0832609f-ac4b-45d2-adff-181f01584853" />
 
 ## Spec Reflection
 
