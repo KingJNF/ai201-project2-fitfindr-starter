@@ -129,6 +129,7 @@ error	           |  On early exit	           |    Tells the caller the run ended
 The same selected_item flows from search_listings → suggest_outfit → create_fit_card automatically, and the outfit_suggestion passes straight into create_fit_card. No re-entry needed by the user.
 
 
+<img width="1074" height="1900" alt="no-results" src="https://github.com/user-attachments/assets/211b4e21-d28d-4b12-9fc8-514e4f31d93a" />
 
 
 ## Error Handling:
