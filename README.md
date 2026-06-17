@@ -153,12 +153,7 @@ Concrete example from testing: Searching designer ballgown size XXS under $5 ret
 "No listings matched 'designer ballgown' in size XXS under $5. Try raising your max price, removing the size filter, or using broader keywords."
 The outfit and fit-card panels stay empty — the agent does not fabricate a result.
 
-
-![No-results error handling](images/no-results.png)
-
-
-
-
+<img width="1074" height="1900" alt="FitFindr Failure Screenshot" src="https://github.com/user-attachments/assets/0832609f-ac4b-45d2-adff-181f01584853" />
 
 ## Spec Reflection
 
