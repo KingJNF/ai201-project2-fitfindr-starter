@@ -58,7 +58,7 @@ pip install -r requirements.txt
 echo "GROQ_API_KEY=your_key_here" > .env
 
 4. Launch the app
-python app.py
+python app.py ```
 
 
 Then open the local URL printed in your terminal (usually `http://localhost:7860`, but check the terminal — the port may differ).
@@ -66,7 +66,7 @@ Then open the local URL printed in your terminal (usually `http://localhost:7860
 **Run the tests:**
 ```bash
 pytest tests/
-
+```
 ---
 
 
@@ -155,8 +155,6 @@ The outfit and fit-card panels stay empty — the agent does not fabricate a res
 
 
 ![No-results error handling](images/no-results.png)
-
-
 
 
 
